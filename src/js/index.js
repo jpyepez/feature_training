@@ -2,6 +2,7 @@ if(!global._babelPolyfill) {
     require('@babel/polyfill');
 }
 
-import ml5 from 'ml5';
+import createVideo from './createVideo';
 
-console.log('test');
+createVideo('videoElement');
+

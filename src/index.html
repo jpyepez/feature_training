@@ -5,8 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Feature Training</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 </head>
 <body>
-    <video id="videoElement" width="640" height="480" autoplay></video>
+    <main class="ui raised very padded text container segment">
+        <h1 class="ui header">Feature Extraction Trainer</h1>
+
+        <div id="videoContainer" class="ui fluid container segment">
+            <video id="videoElement" width="640" height="480"
+            autoplay></video>
+            <div id="status-div" class="ui visible message">
+                <p id="status"></p>
+            </div>
+        </div>
+    
+        <div class="ui fluid container segment">
+            <button id="addA" class="ui button">
+                Add A
+            </button>
+            <button id="addB" class="ui button">
+                Add B
+            </button>
+            <button id="train" class="ui primary button">
+                Train
+            </button>
+            <button id="run" class="ui positive button">
+                Run
+            </button>
+
+        </div>
+    </main>
 </body>
+
 </html>

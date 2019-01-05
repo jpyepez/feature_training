@@ -8,6 +8,8 @@ const createVideo = parent => {
         .then(stream => video.src = video.srcObject = stream)
         .catch(err => console.error(err));
     }
+
+    return video;
 }
 
 export default createVideo;

@@ -26,12 +26,13 @@ main.container {
 
 h1 {
     font-size: 2.8rem !important;
+    text-align: center;
 }
 
 div.container {
     display: flex !important;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 div#videoContainer {
@@ -42,7 +43,7 @@ div#videoContainer {
 
 #videoElement {
     width: 90%;
-    margin: 1rem 0 0 0;
+    margin: 1rem auto;
     max-height: 30vw;
     object-fit: contain;
 }
@@ -50,6 +51,16 @@ div#videoContainer {
 #status-div {
     margin: 2rem;
     width: 70%;
+}
+
+#status {
+    font-size: 1.25rem;
+}
+
+.btnWrapper {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
 }
 
 .button {
@@ -65,6 +76,22 @@ div#videoContainer {
 @media (max-width: 768px) {
     #videoElement {
         max-height: 50vw;
+    }
+}
+
+@media (max-width: 550px) {
+    div.container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div.btnWrapper {
+        margin: 0.5rem !important;
+    }
+
+    .button {
+        padding: 1rem 1.5rem !important;
+        margin: 0 0.5rem !important;
     }
 }
 

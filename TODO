@@ -1,8 +1,9 @@
 
 FeatureExtractor:
-  ☐ Make buttons 'poll' for images.
-  ☐ Make 'reset/clear' button.
-  ☐ Deactivate buttons while training/running other buttons
-  ☐ Add Save Button
-  ☐ Run button greyed out until trained
-  ☐ Make 'status' a console, put on right of video.
+  ✔ Make buttons 'poll' for images. @done(19-01-10 02:51)
+  ✔ Make 'reset/clear' button. @done(19-01-12 01:15)
+  ✔ Deactivate buttons while training/running other buttons @done(19-01-12 01:15)
+  ✔ Add Save Button @done(19-01-12 01:15)
+  ✔ Run button greyed out until trained @done(19-01-12 01:15)
+  ✘ Make 'status' a console, put on right of video. @cancelled(19-01-12 01:15)
+  ✔ Handle errors @done(19-01-12 01:16)

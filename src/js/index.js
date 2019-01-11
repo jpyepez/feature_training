@@ -7,48 +7,17 @@ import createVideo from './createVideo';
 import '../css/style.css';
 
 const video = createVideo('videoElement');
-const imgClassifier = new ImageClassifier(video);
+const buttons = Array.from(document.querySelectorAll('button'));
+let imgClassifier = new ImageClassifier(video);
 
-let sampler = null;
-let predictor = null;
-const interval = 50;
+const status = document.getElementById("status");
 
-const sample = label => {
-    if(!sampler) {
-        console.log(`Sampling ${label}.`);
-        let numSamples = 0;
-        sampler = setInterval(() => { 
-            imgClassifier.addImage(`${label}`) 
-            numSamples++;
-            console.log(`${label}: ${numSamples} samples collected.`);
-        }, interval);
-    } else {
-        clearInterval(sampler);
-        sampler = null;
-        console.log(`Done sampling ${label}.`)
-    }
-}
-
-const run = () => {
-    if (!predictor) {
-        console.log(`Classificator started...`)
-        predictor = setInterval(() => {
-            imgClassifier.predict()
-        }, interval);
-    } else {
-        clearInterval(predictor);
-        predictor = null;
-        console.log(`Classificator stopped.`)
-    }
-}
-
-document.getElementById('addA').addEventListener('click', () => {
-    sample('Class_A');
+document.getElementById('addA').addEventListener('click', event => {
+    imgClassifier.sample('Class_A', event.target.id);
 });
 
-
 document.getElementById('addB').addEventListener('click', event => {
-    sample('Class_B');
+    imgClassifier.sample('Class_B', event.target.id);
 });
 
 document.getElementById('train').addEventListener('click', event => {
@@ -56,5 +25,14 @@ document.getElementById('train').addEventListener('click', event => {
 });
 
 document.getElementById('run').addEventListener('click', event => {
-    run();
+    imgClassifier.predict();
+});
+
+document.getElementById('save').addEventListener('click', event => {
+    imgClassifier.save();
+});
+
+document.getElementById('clear').addEventListener('click', event => {
+    buttons.map(btn => btn.classList.add('disabled'));
+    imgClassifier = new ImageClassifier(video);
 });
